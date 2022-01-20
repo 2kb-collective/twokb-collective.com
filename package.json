@@ -10,7 +10,7 @@
     "react-router-dom": "^6.2.1"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --minify --outfile=app/assets/builds/application.min.js",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --minify --outdir=app/assets/builds",
     "start": "node esbuild-dev.config.js"
   },
   "devDependencies": {
