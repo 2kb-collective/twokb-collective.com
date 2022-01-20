@@ -2,10 +2,20 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "esbuild": "^0.14.11"
+    "@popperjs/core": "^2.11.2",
+    "bootstrap": "^5.1.3",
+    "esbuild": "^0.14.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --minify --outfile=app/assets/builds/application.min.js",
     "start": "node esbuild-dev.config.js"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.3"
   }
 }
