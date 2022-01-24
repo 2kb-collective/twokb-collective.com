@@ -1,5 +1,4 @@
-// Entry point for the build script in your package.json
-import * as React from "react";
+// Entry point for the build script in your package.json.
 import * as ReactDOM from "react-dom";
 
 // import bootstrap js/css

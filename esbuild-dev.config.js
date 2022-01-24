@@ -25,6 +25,7 @@ require("esbuild")
     outdir: path.join(process.cwd(), "app/assets/builds"),
     absWorkingDir: path.join(process.cwd(), "app/javascript"),
     watch: watch && watchOptions,
+    inject: [path.join(process.cwd(), "vendor/javascript/react-shim.js")],
     banner: {
       js: ' (() => new EventSource("http://localhost:1337").onmessage = () => location.reload())();',
     },

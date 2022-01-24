@@ -5,17 +5,38 @@
     "@popperjs/core": "^2.11.2",
     "bootstrap": "^5.1.3",
     "esbuild": "^0.14.11",
+    "husky": "^7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --minify --outdir=app/assets/builds",
-    "start": "node esbuild-dev.config.js"
+    "build": "node esbuild.config.js",
+    "start": "node esbuild-dev.config.js",
+    "lint": "prettier --check app/javascript",
+    "format": "prettier --write app/javascript"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "@types/react-router-dom": "^5.3.3"
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "lint-staged": "^12.2.2",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "prettier --write app/javascript"
   }
 }

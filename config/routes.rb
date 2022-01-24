@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  
+  namespace :api do
+    namespace :v1 do
+      get 'article' => "article#index"
+      get 'article/:id' => "article#show"
+    end
+  end
+  
   root 'home#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
 end
